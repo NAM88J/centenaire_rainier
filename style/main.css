@@ -1,0 +1,122 @@
+.header {
+  padding-top: 2.2395833333vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.header_logo {
+  width: 16.7708333333vw;
+  height: 9.4270833333vw;
+  transition: opacity 0.4s;
+}
+.header_logo:hover {
+  opacity: 0.7;
+}
+.header_logo img {
+  width: 100%;
+}
+.header_nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.6666666667vw;
+}
+.header_menu {
+  display: flex;
+  align-items: center;
+}
+.header_menu li {
+  margin-right: 4.4270833333vw;
+}
+.header_menu li:last-child {
+  margin-right: 0;
+}
+.header_menu li.current-menu-item a {
+  color: #df3144;
+}
+.header_menu li.current-menu-item a::after {
+  width: 100%;
+}
+.header_menu li.current-menu-item a::before {
+  content: "";
+  position: absolute;
+  top: -1.6666666667vw;
+  left: calc(50% - 1.015625vw);
+  width: 2.03125vw;
+  height: 1.5625vw;
+  background: url("../images/crown.svg") no-repeat;
+  background-size: 100% 100%;
+}
+.header_menu li:hover a {
+  color: #df3144;
+}
+.header_menu li:hover a::after {
+  width: 100%;
+}
+.header_menu li a {
+  font-family: Avenir;
+  font-weight: 500;
+  font-size: 0.9375vw;
+  color: #8f7c77;
+  position: relative;
+  transition: color 0.4s;
+}
+.header_menu li a::after {
+  content: "";
+  position: absolute;
+  bottom: -0.0520833333vw;
+  left: 0;
+  width: 0;
+  height: 0.0520833333vw;
+  background-color: #df3144;
+  transition: width 0.4s;
+}
+
+.footer {
+  border-top: 0.0520833333vw solid #8f7c77;
+  padding: 0.78125vw 0;
+}
+.footer_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer_menu {
+  display: flex;
+}
+.footer_menu li {
+  margin-right: 5.2083333333vw;
+}
+.footer_menu li:last-child {
+  margin-right: 0;
+}
+.footer_menu li.current-menu-item a, .footer_menu li:hover a {
+  color: #df3144;
+}
+.footer_menu li.current-menu-item a::after, .footer_menu li:hover a::after {
+  width: 100%;
+}
+.footer_menu li a {
+  font-family: Avenir;
+  font-weight: 500;
+  font-size: 0.7291666667vw;
+  color: #8f7c77;
+  position: relative;
+}
+.footer_menu li a::after {
+  content: "";
+  position: absolute;
+  bottom: -0.0520833333vw;
+  left: 0;
+  width: 0;
+  height: 0.0520833333vw;
+  background-color: #df3144;
+  transition: width 0.4s;
+}
+.footer_copyright {
+  font-family: Times;
+  font-weight: normal;
+  font-style: italic;
+  font-size: 0.8333333333vw;
+  color: #8f7c77;
+}/*# sourceMappingURL=main.css.map */

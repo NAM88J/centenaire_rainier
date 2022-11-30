@@ -1,4 +1,64 @@
+@font-face {
+  font-family: "Avenir";
+  src: local("Avenir Medium"), local("Avenir-Medium"), url("../fonts/Avenir-Medium.woff2") format("woff2"), url("../fonts/Avenir-Medium.woff") format("woff"), url("../fonts/Avenir-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir";
+  src: local("Avenir Heavy"), local("Avenir-Heavy"), url("../fonts/Avenir-Heavy.woff2") format("woff2"), url("../fonts/Avenir-Heavy.woff") format("woff"), url("../fonts/Avenir-Heavy.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Times";
+  src: local("Times Italic"), local("Times-Italic"), url("../fonts/TimesLTStd-Italic.woff2") format("woff2"), url("../fonts/TimesLTStd-Italic.woff") format("woff"), url("../fonts/TimesLTStd-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "icomoon";
+  src: url("../fonts/icomoon.eot?voxujc");
+  src: url("../fonts/icomoon.eot?voxujc#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?voxujc") format("truetype"), url("../fonts/icomoon.woff?voxujc") format("woff"), url("../fonts/icomoon.svg?voxujc#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+.icofont {
+  font-family: "icomoon" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  transition: color 0.4s;
+}
+
+body,
+html {
+  background-color: #EFEBE9;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  width: 93.2291666667vw;
+  margin: 0 auto;
 }/*# sourceMappingURL=style.css.map */
