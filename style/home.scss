@@ -14,7 +14,7 @@
     flex-direction: column;
     justify-content: space-between;
     &_nav {
-        padding-bottom: vwd(74);
+        padding-bottom: vwd(40);
     }
     &_menu {
         display: flex;
@@ -32,12 +32,15 @@
                 text-align: center;
                 color: #8f7c77;
                 cursor: pointer;
+                &.active {
+                    color: #da3143;
+                }
             }
         }
     }
     &_content {
         overflow-x: auto;
-        padding-bottom: vwd(10);
+        padding-bottom: vwd(20);
         &::-webkit-scrollbar {
             width: 0;
             height: 0;
@@ -48,6 +51,10 @@
         width: max-content;
         -ms-overflow-style: none;
         scrollbar-width: none;
+        margin-left: vwd(70);
+        &-area {
+            display: flex;
+        }
     }
     &_item {
         width: vwd(385);
@@ -62,9 +69,9 @@
         z-index: 2;
         box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.16);
         background-size: 100% 100%;
-        &:first-child {
-            margin-left: vwd(70);
-        }
+        // &:first-child {
+        //     margin-left: vwd(70);
+        // }
         &-hundred {
             width: vwd(151);
             height: vwd(76);
@@ -245,7 +252,7 @@
         background-color: #EFEBE9;
         border: vwd(1) solid #8f7c77;
         overflow: hidden;
-        padding: vwd(12) vwd(30) vwd(157);
+        padding: vwd(20) vwd(30) vwd(157);
         display: none;
         &-fon {
             position: absolute;
@@ -273,7 +280,7 @@
             margin-bottom: vwd(31);
             .events_item-hundred {
                 margin-bottom: 0;
-                margin-top: vwd(18);
+                margin-top: vwd(10);
             }
         }
         &-know {
@@ -287,12 +294,20 @@
         }
         &-close {
             position: absolute;
-            width: vwd(44);
-            height: vwd(44);
-            top: 0;
-            right: 0;
+            font-size: vwd(44);
+            top: vwd(2);
+            right: vwd(-4);
             cursor: pointer;
-            background-color: #fafafa;
+            &::before {
+                content: "\e906";
+                color: #8f7c77;
+                transition: color 0.4s;
+            }
+            &:hover {
+                &::before {
+                    color: #df3144;
+                }
+            }
         }
         .events_item-data {
             margin-bottom: 0;
@@ -321,6 +336,37 @@
             right: vwd(37);
             bottom: vwd(28);
         }
+        &-link {
+            font-family: Avenir;
+            font-weight: 900;
+            text-decoration: underline;
+            font-size: vwd(23);
+            line-height: vwd(46);
+            color: #8f7c77;
+            position: absolute;
+            z-index: 3;
+            padding-left: vwd(34);
+            bottom: vwd(32);
+            left: vwd(35);
+            transition: color 0.4s;
+            &:before {
+                content: "\e904";
+                font-family: 'icomoon' !important;
+                speak: never;
+                font-style: normal;
+                font-weight: normal;
+                font-variant: normal;
+                text-transform: none;
+                line-height: 1;
+                font-size: vwd(28);
+                position: absolute;
+                left: 0;
+                top: vwd(10);
+            }
+            &:hover {
+                color: #df3144;
+            }
+        }
         &-bg {
             position: fixed;
             top: 0;
@@ -334,6 +380,38 @@
             &.active {
                 display: block;
             }
+        }
+    }
+    &_aligenleft {
+        text-align: right;
+        padding-right: vwd(25);
+    }
+    &_scrolbutton {
+        font-family: Avenir;
+        font-weight: 500;
+        font-size: vwd(18);
+        text-align: left;
+        color: #8f7c77;
+        text-transform: uppercase;
+        padding: 0 vwd(30);
+        position: relative;
+        transition: color 0.4s;
+        &:after {
+            content: "\e907";
+            position: absolute;
+            right: 0;
+            top: vwd(2);
+            font-size: vwd(16);
+        }
+        &:before {
+            content: "\e905";
+            position: absolute;
+            left: 0;
+            top: vwd(-1);
+            font-size: vwd(25);
+        }
+        &:hover {
+            color: #df3144;
         }
     }
 }
