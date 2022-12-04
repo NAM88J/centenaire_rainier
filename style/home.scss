@@ -19,22 +19,35 @@
     &_menu {
         display: flex;
         margin-left: vwd(140);
+        padding-top: vwd(10);
         li {
             margin-right: vwd(50);
+            font-family: Avenir;
+            font-weight: 900;
+            font-size: vwd(18);
+            line-height: 1;
+            text-align: center;
+            color: #8f7c77;
+            cursor: pointer;
+            position: relative;
+            padding-top: vwd(20);
+            &.active {
+                color: #da3143;
+            }
+            &.crown {
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: vwd(22);
+                    height: vwd(17);
+                    background: url('../images/crown.svg') no-repeat;
+                    background-size: 100% 100%;
+                    top: 0;
+                    left: calc(50% - vwd(11));
+                }
+            }
             &:last-child {
                 margin-right: 0;
-            }
-            a {
-                font-family: Avenir;
-                font-weight: 900;
-                font-size: vwd(18);
-                line-height: 1;
-                text-align: center;
-                color: #8f7c77;
-                cursor: pointer;
-                &.active {
-                    color: #da3143;
-                }
             }
         }
     }
@@ -53,7 +66,10 @@
         scrollbar-width: none;
         margin-left: vwd(70);
         &-area {
-            display: flex;
+            display: none;
+            &.active {
+                display: flex;
+            }
         }
     }
     &_item {
@@ -349,6 +365,10 @@
             bottom: vwd(32);
             left: vwd(35);
             transition: color 0.4s;
+            display: none;
+            &.active {
+                display: block;
+            }
             &:before {
                 content: "\e904";
                 font-family: 'icomoon' !important;
