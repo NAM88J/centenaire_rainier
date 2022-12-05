@@ -74,26 +74,22 @@
     }
     &_item {
         width: vwd(385);
-        min-height: vwd(565);
+        min-height: vwd(440);
         height: 100%;
-        background: transparent;
         border: vwd(1) solid #8f7c77;
         margin-right: vwd(23);
-        padding: vwd(20) vwd(20) vwd(15);
+        padding: vwd(20) vwd(20) vwd(120);
         position: relative;
         overflow: hidden;
         z-index: 2;
         box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.16);
-        background-size: 100% 100%;
-        // &:first-child {
-        //     margin-left: vwd(70);
-        // }
+        background-size: 0 0;
         &-hundred {
             width: vwd(151);
             height: vwd(76);
             background: url('../images/one_hundred_brown.png') no-repeat;
             background-size: 100% 100%;
-            margin-bottom: vwd(126);
+            margin-bottom: vwd(100);
             position: relative;
             z-index: 2;
             transition: background 0.4s;
@@ -208,11 +204,12 @@
             right: 0;
             width: 100%;
             height: 100%;
-            background: #EFEBE9;
+            opacity: 0;
             z-index: 1;
-            transition: opacity 0.4s, background 0.4s;
+            background: #da3143;
         }
         &:hover {
+            background-size: 100% 100%;
             .events_item {
                 &-hundred {
                     background: url('../images/one_hundred_white.png') no-repeat;
@@ -220,7 +217,6 @@
                 }
                 &-bg {
                     opacity: 0.7;
-                    background: #da3143;
                 }
                 &-data {
                     animation: slow_show_left 0.2s;
@@ -415,13 +411,15 @@
         text-transform: uppercase;
         padding: 0 vwd(30);
         position: relative;
-        transition: color 0.4s;
+        display: inline-block;
+        z-index: 3;
         &:after {
             content: "\e907";
             position: absolute;
             right: 0;
             top: vwd(2);
             font-size: vwd(16);
+            animation: move 0.9s infinite;
         }
         &:before {
             content: "\e905";
@@ -429,9 +427,17 @@
             left: 0;
             top: vwd(-1);
             font-size: vwd(25);
+            animation: puls 0.9s infinite;
         }
-        &:hover {
-            color: #df3144;
+    }
+    &_opacitybg {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        opacity: 0;
+        transition: opacity 0.8s;
+        &.active {
+            opacity: 1;
         }
     }
 }
@@ -445,6 +451,28 @@
     }
     100% {
         opacity: 1;
+    }
+}
+@keyframes puls {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.3);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes move {
+    0% {
+        transform: translateX(vwd(-2))
+    }
+    50% {
+        transform: translateX(vwd(2))
+    }
+    100% {
+        transform: translateX(vwd(-2))
     }
 }
 @keyframes slow_show_left {

@@ -7,10 +7,14 @@ $(document).ready(function () {
     $(document).on('click', '.events_menu li', function(e) {
         let all_items = $('.events_menu li, .events_items-area'),
             tab_id = $(this).data('tabid'),
+            images = $('.events_opacitybg'),
+            target_image = $('.events_opacitybg[data-tabid="' + tab_id + '"]')
             target_tab = $('.events_items-area[data-tabid="' + tab_id + '"]');
         all_items.removeClass('active');
+        images.removeClass('active');
         $(this).addClass('active');
         target_tab.addClass('active');
+        target_image.addClass('active');
     }); 
     // Open modal
     $(document).on('click', '.events_item-info', function(e) {

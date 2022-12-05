@@ -71,24 +71,23 @@
 }
 .events_item {
   width: 20.0520833333vw;
-  min-height: 29.4270833333vw;
+  min-height: 22.9166666667vw;
   height: 100%;
-  background: transparent;
   border: 0.0520833333vw solid #8f7c77;
   margin-right: 1.1979166667vw;
-  padding: 1.0416666667vw 1.0416666667vw 0.78125vw;
+  padding: 1.0416666667vw 1.0416666667vw 6.25vw;
   position: relative;
   overflow: hidden;
   z-index: 2;
   box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.16);
-  background-size: 100% 100%;
+  background-size: 0 0;
 }
 .events_item-hundred {
   width: 7.8645833333vw;
   height: 3.9583333333vw;
   background: url("../images/one_hundred_brown.png") no-repeat;
   background-size: 100% 100%;
-  margin-bottom: 6.5625vw;
+  margin-bottom: 5.2083333333vw;
   position: relative;
   z-index: 2;
   transition: background 0.4s;
@@ -203,9 +202,12 @@
   right: 0;
   width: 100%;
   height: 100%;
-  background: #EFEBE9;
+  opacity: 0;
   z-index: 1;
-  transition: opacity 0.4s, background 0.4s;
+  background: #da3143;
+}
+.events_item:hover {
+  background-size: 100% 100%;
 }
 .events_item:hover .events_item-hundred {
   background: url("../images/one_hundred_white.png") no-repeat;
@@ -213,7 +215,6 @@
 }
 .events_item:hover .events_item-bg {
   opacity: 0.7;
-  background: #da3143;
 }
 .events_item:hover .events_item-data {
   -webkit-animation: slow_show_left 0.2s;
@@ -404,7 +405,8 @@
   text-transform: uppercase;
   padding: 0 1.5625vw;
   position: relative;
-  transition: color 0.4s;
+  display: inline-block;
+  z-index: 3;
 }
 .events_scrolbutton:after {
   content: "\e907";
@@ -412,6 +414,8 @@
   right: 0;
   top: 0.1041666667vw;
   font-size: 0.8333333333vw;
+  -webkit-animation: move 0.9s infinite;
+          animation: move 0.9s infinite;
 }
 .events_scrolbutton:before {
   content: "\e905";
@@ -419,9 +423,18 @@
   left: 0;
   top: -0.0520833333vw;
   font-size: 1.3020833333vw;
+  -webkit-animation: puls 0.9s infinite;
+          animation: puls 0.9s infinite;
 }
-.events_scrolbutton:hover {
-  color: #df3144;
+.events_opacitybg {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  transition: opacity 0.8s;
+}
+.events_opacitybg.active {
+  opacity: 1;
 }
 
 @-webkit-keyframes slow_show {
@@ -445,6 +458,50 @@
   }
   100% {
     opacity: 1;
+  }
+}
+@-webkit-keyframes puls {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes puls {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes move {
+  0% {
+    transform: translateX(-0.1041666667vw);
+  }
+  50% {
+    transform: translateX(0.1041666667vw);
+  }
+  100% {
+    transform: translateX(-0.1041666667vw);
+  }
+}
+@keyframes move {
+  0% {
+    transform: translateX(-0.1041666667vw);
+  }
+  50% {
+    transform: translateX(0.1041666667vw);
+  }
+  100% {
+    transform: translateX(-0.1041666667vw);
   }
 }
 @-webkit-keyframes slow_show_left {
